@@ -1,0 +1,117 @@
+# brazil-ecommerce-sql-analysis
+SQL data analysis project using the Olist Brazilian E-Commerce dataset.
+# Brazil E-Commerce SQL Analysis
+
+ **Work in Progress**
+
+## Project Overview
+
+This project explores the Brazilian e-commerce marketplace using SQL.
+The analysis focuses on understanding marketplace performance, seller behavior, product trends, and customer purchasing patterns.
+
+The goal is to simulate real-world data analyst work by answering business questions using structured queries and analytical techniques.
+
+## Dataset
+
+Source: Olist Brazilian E-Commerce Public Dataset
+
+The dataset contains detailed information about an online marketplace including:
+
+* Orders
+* Customers
+* Sellers
+* Products
+* Payments
+* Order items
+* Order timestamps
+
+These tables allow analysis of both the **supply side (sellers/products)** and **demand side (customers/orders)** of the marketplace.
+
+## Tools & Technologies
+
+* PostgreSQL
+* SQL (CTEs, Window Functions, Time-Series Analysis)
+* GitHub for version control
+
+## Business Questions
+
+### Business Overview
+
+* How many orders, customers, sellers, and products exist in the dataset?
+* What is the total marketplace revenue?
+* What is the average order value?
+
+### Time Trend Analysis
+
+* What is the monthly revenue trend?
+* How does the number of orders change over time?
+* How does average order value evolve over time?
+
+### Seller Analysis
+
+* Which sellers generate the most revenue?
+* What percentage of total revenue comes from the top sellers?
+* How many sellers are active each month?
+* How many sellers become inactive over time?
+* What is the seller churn trend?
+
+### Product Analysis
+
+* Which product categories generate the highest revenue?
+* Which categories sell the most units?
+* How does category performance change over time?
+
+### Customer Behavior
+
+* How many customers make repeat purchases?
+* What is the average number of orders per customer?
+* How frequently do customers place orders?
+
+## Project Structure
+
+```
+brazil-ecommerce-sql-analysis
+│
+├── README.md
+├── .gitignore
+│
+├── schema
+│   ├── create_tables.sql
+│   ├── create_indexes.sql
+│
+├── analysis
+│   ├── 01_business_overview.sql
+│   ├── 02_monthly_trends.sql
+│   ├── 03_seller_analysis.sql
+│   ├── 04_seller_churn.sql
+│   ├── 05_product_analysis.sql
+│   └── 06_customer_behavior.sql
+│
+├── insights
+│   └── findings.md
+│
+└── documentation
+    └── project_notes.md
+```
+
+## Project Progress
+
+✔ Database schema setup
+✔ Monthly revenue analysis
+✔ Seller revenue contribution analysis
+✔ Active vs inactive sellers analysis
+⬜ Seller churn detection
+⬜ Product category analysis
+⬜ Customer behavior analysis
+
+## Future Improvements
+
+* Build seller retention and reactivation analysis
+* Perform cohort analysis for customer retention
+* Visualize results using a BI tool
+
+## Key Insights (To be updated)
+
+Insights from the analysis will be summarized here once the project progresses further.
+
+---

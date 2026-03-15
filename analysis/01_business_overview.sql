@@ -103,4 +103,45 @@ order by
 	category_revenue desc 
 	; 
 
+--5️⃣ comparing the casual , growing and professional sellers and the contibution with distribution
+
+select
+	category , 
+	category_revenue , 
+	round(category_revenue*100/total_revenue,2) as revenue_contribution ,
+	round(category_seller*100/total_seller,2) as distribution 
+from 
+( 
+	select 
+		category , 
+		sum(seller_revenue) as category_revenue , 
+		sum(sum(seller_revenue))over() as total_revenue , 
+		sum(seller_count) as category_seller ,
+		sum(sum(seller_count))over() as total_seller
+	from 
+	(
+		select 
+			seller_revenue ,
+			1 as seller_count ,
+			case 
+				when seller_revenue >= 81000 then 'professional'
+				when seller_revenue >=5000  then 'growing_buisness'
+				else 'casual_seller'
+			end as category 
+		from 
+		(
+			select 
+				oi.seller_id , 
+				sum(oi.price) as seller_revenue 
+			from order_items as oi 
+			join orders as o 
+				on o.order_id = oi.order_id 
+			where o.order_status = 'delivered'
+			group by oi.seller_id 
+		) a
+	) b 
+	group by category 
+) c 
+order by category_revenue desc 
+; 
 
